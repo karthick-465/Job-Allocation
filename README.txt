@@ -1,6 +1,6 @@
 Job Allocation System Using Greedy Algorithm
 
-project Link:
+project Link:https://joballocation.vercel.app/
 
 📌 Project Overview
 
