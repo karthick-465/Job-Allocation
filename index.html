@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Allocation | Greedy Algorithm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">JA</span> Job<span>Flow</span></div>
+    <nav><a class="active" href="#dashboard">Dashboard</a><a href="#how">How it works</a><a href="#source">C source</a></nav>
+  </header>
+
+  <main id="dashboard">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">GREEDY ALGORITHM PROJECT</p>
+        <h1>Smart Job Allocation</h1>
+        <p class="sub">Choose the jobs that give the highest total profit while meeting their deadlines.</p>
+      </div>
+      <div class="hero-mark">↗</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat"><span>Total jobs</span><strong id="jobCount">5</strong><small>Available for allocation</small></article>
+      <article class="stat"><span>Jobs selected</span><strong id="selectedCount">0</strong><small>Successfully scheduled</small></article>
+      <article class="stat highlight"><span>Maximum profit</span><strong id="totalProfit">0</strong><small>From selected jobs</small></article>
+    </section>
+
+    <section class="workspace">
+      <article class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">INPUT</p><h2>Job details</h2></div><button class="light-btn" id="sampleBtn">Load sample</button></div>
+        <p class="muted">Add a job ID, deadline and profit. Each job takes one time slot.</p>
+        <form id="jobForm" class="job-form">
+          <label>Job ID<input id="jobId" maxlength="8" placeholder="Example: J6" required></label>
+          <label>Deadline<input id="deadline" type="number" min="1" max="20" placeholder="1 - 20" required></label>
+          <label>Profit<input id="profit" type="number" min="0" placeholder="Example: 100" required></label>
+          <button class="primary-btn" type="submit">+ Add job</button>
+        </form>
+        <div class="table-wrap"><table><thead><tr><th>Job ID</th><th>Deadline</th><th>Profit</th><th></th></tr></thead><tbody id="jobRows"></tbody></table></div>
+        <button class="run-btn" id="allocateBtn">Run greedy allocation <span>→</span></button>
+      </article>
+
+      <article class="panel result-panel">
+        <p class="eyebrow">OUTPUT</p><h2>Allocation result</h2>
+        <p class="muted">The algorithm selects higher-profit jobs first and assigns each to the latest available slot before its deadline.</p>
+        <div id="emptyState" class="empty"><div class="empty-icon">▦</div><strong>Ready to allocate</strong><span>Click “Run greedy allocation” to see the result.</span></div>
+        <div id="resultArea" hidden>
+          <div class="timeline" id="timeline"></div>
+          <h3>Selected jobs</h3>
+          <div id="selectedJobs" class="selected-list"></div>
+          <div class="profit-total"><span>Total profit</span><strong id="resultProfit">0</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel how-panel" id="how">
+      <p class="eyebrow">ALGORITHM GUIDE</p><h2>How the greedy method works</h2>
+      <div class="steps">
+        <div><b>01</b><h3>Sort by profit</h3><p>Arrange all jobs from highest profit to lowest profit.</p></div>
+        <div><b>02</b><h3>Find a free slot</h3><p>For each job, check the latest free slot on or before its deadline.</p></div>
+        <div><b>03</b><h3>Calculate profit</h3><p>Allocate the job if a slot is available. Add its profit to the total.</p></div>
+      </div>
+      <div class="note"><strong>Why latest slot?</strong> Placing a job as late as possible keeps earlier slots free for jobs with smaller deadlines.</div>
+    </section>
+
+    <section class="panel source-panel" id="source">
+      <p class="eyebrow">C PROGRAMMING</p><h2>Core C implementation</h2>
+      <p class="muted">The complete beginner-friendly C program is included in <code>job_allocation.c</code> in this project folder.</p>
+      <pre><code>1. Sort jobs by descending profit.
+2. For each job:
+   Check slots from deadline down to 1.
+   If a slot is free, allocate the job.
+3. Add the selected job's profit.
+4. Display the allocated jobs and total profit.</code></pre>
+    </section>
+    <footer>JobFlow · Job Allocation using Greedy Algorithm · C Programming Mini Project</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
