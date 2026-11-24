@@ -1,71 +1,162 @@
-JOB ALLOCATION USING GREEDY ALGORITHM
-======================================
+# Job Allocation System Using Greedy Algorithm
 
-PROJECT OVERVIEW
-This mini project allocates jobs to time slots to get the maximum possible
-profit. Every job takes one time slot and must be completed on or before
-its deadline.
+project Link:
 
-FILES
------
-1. job_allocation.c  - Main C program using the greedy algorithm.
-2. index.html        - Web project page.
-3. style.css         - Website design.
-4. script.js         - Browser demo of the same greedy logic.
+## 📌 Project Overview
 
-HOW TO OPEN THE WEB PROJECT
----------------------------
-1. Extract this ZIP file.
-2. Open the project folder.
-3. Double-click index.html.
-4. The JobFlow dashboard opens in your browser.
-5. Add jobs or click "Load sample".
-6. Click "Run greedy allocation" to view the selected jobs and profit.
+The **Job Allocation System Using Greedy Algorithm** is a project developed using the C programming language to allocate jobs based on their deadlines and profits.
 
-HOW TO RUN THE C PROGRAM
-------------------------
-Windows (GCC / MinGW):
-1. Open Command Prompt in this project folder.
-2. Compile:
-       gcc job_allocation.c -o job_allocation
-3. Run:
-       job_allocation.exe
+The main objective of this project is to maximize the total profit by selecting the most profitable jobs and assigning them to available time slots before their deadlines.
 
-Linux / macOS:
-       gcc job_allocation.c -o job_allocation
-       ./job_allocation
+This project also includes a web-based interface developed using HTML, CSS, and JavaScript to demonstrate the job allocation process visually.
 
-SAMPLE INPUT
-------------
-Number of jobs: 5
+## 🎯 Objectives
 
-Job ID: J1     Deadline: 2     Profit: 100
-Job ID: J2     Deadline: 1     Profit: 19
-Job ID: J3     Deadline: 2     Profit: 27
-Job ID: J4     Deadline: 1     Profit: 25
-Job ID: J5     Deadline: 3     Profit: 15
+- To understand and implement the Greedy Algorithm.
+- To allocate jobs based on deadlines and profits.
+- To maximize total profit.
+- To understand job scheduling and time-slot allocation.
+- To provide a simple and interactive website for visualizing the results.
 
-EXPECTED ALLOCATION
--------------------
-Time Slot 1 -> Job J3 (Profit: 27)
-Time Slot 2 -> Job J1 (Profit: 100)
-Time Slot 3 -> Job J5 (Profit: 15)
-Maximum Total Profit: 142
+## 🛠️ Technologies Used
 
-EASY ALGORITHM EXPLANATION
---------------------------
-1. Read the job ID, deadline and profit.
-2. Sort the jobs from highest profit to lowest profit.
-3. Take the first job (highest profit).
-4. Search for a free time slot from its deadline backwards.
-5. If a free slot is found, allocate that job.
-6. Repeat for all jobs.
-7. Add the profits of allocated jobs and display the total.
+| Technology | Purpose |
+|---|---|
+| C Programming | Implementation of the Greedy Algorithm |
+| HTML | Website structure |
+| CSS | Website design and styling |
+| JavaScript | Interactive job allocation |
+| VS Code | Development environment |
+| GCC Compiler | Compiling and executing C code |
 
-IMPORTANT NOTE
---------------
-The web page is an interactive visual demonstration. The actual C program
-is job_allocation.c and can be compiled and run separately. Both use the
-same greedy job scheduling rule.
+## 🧠 Algorithm Used
 
-This version assumes each job takes exactly one time slot.
+**Greedy Algorithm – Job Sequencing with Deadlines**
+
+The Greedy Algorithm makes the best possible choice at each step to achieve maximum profit.
+
+### Working Procedure
+
+1. Get the job ID, deadline, and profit from the user.
+2. Sort all jobs in descending order of profit.
+3. Check the deadline of each job.
+4. Search for the latest available time slot before its deadline.
+5. Allocate the job if a free slot is available.
+6. Skip the job if no suitable slot is available.
+7. Calculate and display the total profit.
+
+
+## 🌐 Website Features
+
+- Add new jobs.
+- Enter job ID, deadline, and profit.
+- Remove existing jobs.
+- Execute Greedy Algorithm allocation.
+- Display allocated time slots.
+- Display selected jobs and their profits.
+- Calculate the maximum total profit.
+- View the algorithm explanation and C source code.
+
+## 📂 Project Structure
+
+```text
+Job_Allocation_Greedy_Project/
+│
+├── index.html
+├── style.css
+├── script.js
+├── job_allocation.c
+└── README.md
+```
+
+## ⚙️ How to Run the C Program
+
+### Step 1: Install GCC Compiler
+
+Install GCC using MinGW-w64 or MSYS2.
+
+### Step 2: Open the Project Folder
+
+Open the project folder in VS Code.
+
+### Step 3: Open the Terminal
+
+Navigate to the folder containing `job_allocation.c`.
+
+### Step 4: Compile the C Program
+
+```bash
+gcc job_allocation.c -o job_allocation
+```
+
+### Step 5: Execute the Program
+
+For Windows PowerShell:
+
+```powershell
+.\job_allocation.exe
+```
+
+The program will ask you to enter the number of jobs and their details.
+
+## 🌍 How to Run the Website
+
+1. Open the project folder.
+2. Locate `index.html`.
+3. Right-click and select Open with Chrome or another web browser.
+4. Enter job details or use the sample jobs.
+5. Click **Run Greedy Allocation**.
+6. View the allocated jobs and maximum total profit.
+
+No separate server or database is required for the basic website demonstration.
+
+## ⏱️ Time Complexity
+
+Let:
+
+- n = Number of jobs.
+- D = Maximum job deadline.
+
+| Operation | Time Complexity |
+|---|---|
+| Sorting jobs | O(n²) |
+| Job allocation | O(n × D) |
+| Overall complexity | O(n² + nD) |
+
+**Space Complexity:** O(n + D) for the job and time-slot arrays.
+
+## 💡 Applications
+
+- Employee task scheduling.
+- Project task allocation.
+- Deadline-based assignments.
+- Resource scheduling.
+- Production planning.
+
+## ⚠️ Assumptions
+
+- Each job requires exactly one time slot.
+- Only one job can be scheduled in a time slot.
+- A job must be completed on or before its deadline.
+- Profit is earned only when a job is successfully scheduled.
+- The algorithm considers jobs in descending order of profit.
+
+## 🚀 Future Enhancements
+
+- Employee skill-based job allocation.
+- Priority-based scheduling.
+- Database integration.
+- Advanced scheduling algorithms.
+- Job allocation reports and analytics.
+
+## 👨‍💻 Author
+
+**Project:** Job Allocation System Using Greedy Algorithm
+
+**Programming Language:** C
+
+**Project Type:** Algorithm-Based Web Application
+
+## 📜 License
+
+This project is developed for educational and academic purposes.
